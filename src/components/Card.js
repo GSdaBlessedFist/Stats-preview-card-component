@@ -1,7 +1,6 @@
 import "../SCSS/styles.scss";
-import {
-    useEffect
-} from "react";
+import {useEffect} from "react";
+
 export default function Card() {
     useEffect(() => {
         var h2Group = document.querySelectorAll('h2');
