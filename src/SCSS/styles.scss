@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+/*$interFont = */
+$lexendFont : 'Lexend Deca', sans-serif;
+$interFont : 'Inter', sans-serif;
+
 @mixin b($w:1px){
 	border: $w white solid;
 }
 *{
 	box-sizing: border-box;
 	margin: 0px;
-	color: blue;
+	color: white;
 }
 $mainBG: hsl(233, 47%, 7%);
 $cardBG: hsl(244, 38%, 16%);
@@ -18,19 +24,62 @@ $spacerHeight: 25px;
 	height:956px;
     width:375px;
 	background: $mainBG;
-	transform:  scale(.5);
 }
 
 .card{
-	display: block;
-	width: 320px;
+	display: grid;
+	grid-template-rows: 240px 160px 125px auto;
+	width: 335px;
 	background: $cardBG;
-	height: 750px;
-	border-radius: 5vw ;
+	height: 780px;
+	border-radius: 25px ;
+	overflow: hidden;
 	&__image-hero{
-		background-image: url("../assets/images/image-header-mobile.jpg");
+		display: block;
+		position: relative;
 		width: 100%;
-  		height: auto;
-		resize: both;
+		height: 240px;
+		background: $accent;
+		background-image: url('../images/image-header-mobile.jpg');
+		background-blend-mode: multiply;
+		background-size: cover;
 	}
+	&__text1{
+		font-weight: 350;
+		color: hsl(0, 0%, 100%);
+		font-family: $lexendFont;
+		padding: 25px 15px 20px;
+		letter-spacing: 0px;
+		word-spacing:  -5px;
+	}
+	&__text2{
+		color: hsla(0, 0%, 100%, 0.75);
+		font-family: $interFont;
+		font-size:  15px;
+		padding: 0px 35px 20px;
+		text-align: center;
+		text-justify: none;
+		line-height: 175%;
+	}
+	&__info-section{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/*border:  1px red solid;*/
+		font-family: $interFont;
+		&>div{
+			margin: 10px auto;
+			&>h5{
+				font-family: $lexendFont;
+				letter-spacing: 1px;
+				margin: 6px auto;
+				color: hsla(0, 0%, 100%, 0.6);
+			}
+		}
+	}
+}
+
+span{
+	color:$accent;
 }
